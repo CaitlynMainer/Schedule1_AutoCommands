@@ -8,6 +8,8 @@ using System.Linq;
 using System.Collections;
 using FishNet;
 using ScheduleOne.PlayerScripts;
+using ScheduleOne.Persistence;
+using static Unity.Burst.Intrinsics.X86.Avx;
 
 [assembly: MelonInfo(typeof(AutoCommands.Core), "AutoCommands", "1.0.0", "Michiyo")]
 [assembly: MelonGame("TVGS", "Schedule I")]
@@ -124,13 +126,14 @@ namespace AutoCommands
 
         public override void OnUpdate()
         {
-
             string currentScene = SceneManager.GetActiveScene().name;
             if (currentScene != "Main") return;
 
             if (_isHost != true)
                 return;
 
+            if (LoadManager.Instance == null || !LoadManager.Instance.IsGameLoaded || Player.Local == null)
+                return;
 
             float now = Time.realtimeSinceStartup;
 

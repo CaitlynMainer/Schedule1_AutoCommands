@@ -1,2 +1,63 @@
-/AutoCommands/bin
-/AutoCommands/obj
+# Build artifacts
+bin/
+obj/
+[Ll]og/
+*.log
+
+# Visual Studio files
+.vscode/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+*.dll
+*.exe
+*.app
+*.pdb
+
+# NuGet
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+
+# DotCover
+.idea/
+*.dotCover
+
+# Rider
+.idea/
+*.sln.iml
+
+# ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# ASP.NET
+App_Data/
+App_Code/
+
+# Others
+TestResults/
+*.dbmdl
+*.cache
+*.orig
+*.bak
+*.tmp
+*.swp
+
+# Unity (if relevant)
+Library/
+Temp/
+Obj/
+Build/
+Builds/
+Assets/AssetStoreTools*
+
+# Ignore secrets
+secrets.json
+appsettings.Development.json
